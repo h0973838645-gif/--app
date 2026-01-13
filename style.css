@@ -1,0 +1,20 @@
+body { font-family: sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; }
+#app { background: white; width: 100%; max-width: 450px; min-height: 100vh; padding: 20px; box-sizing: border-box; padding-bottom: 80px; }
+.header h1 { color: #1a73e8; text-align: center; font-size: 1.5rem; }
+
+/* 分頁按鈕 */
+.tab-bar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 450px; display: flex; background: white; border-top: 1px solid #ddd; z-index: 100; }
+.tab-bar button { flex: 1; padding: 15px; border: none; background: none; font-size: 1rem; color: #5f6368; cursor: pointer; }
+.tab-bar button.active { color: #1a73e8; font-weight: bold; border-top: 3px solid #1a73e8; }
+
+.converter, .ledger, .summary { background: #f8f9fa; padding: 15px; border-radius: 15px; margin-bottom: 20px; }
+.input-group { display: flex; gap: 10px; }
+input, select { width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+.result-text { font-size: 1.5rem; font-weight: bold; color: #1a73e8; text-align: center; }
+button { background: #1a73e8; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; width: 100%; }
+
+.chart-container { width: 100%; max-width: 300px; margin: 0 auto 20px; }
+ul { list-style: none; padding: 0; }
+li { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #eee; align-items: center; }
+.del-btn { background: #ff4d4f; color: white; border: none; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; width: auto; }
+.summary-item { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.9rem; }
