@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>旅遊記帳匯率通</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="tab-bar">
+            <button onclick="showPage('page1')" id="btn-page1" class="active">記帳換算</button>
+            <button onclick="showPage('page2')" id="btn-page2">消費分析</button>
+        </div>
+
+        <div id="page1" class="page">
+            <div class="header"><h1>匯率記帳</h1></div>
+            <div class="converter">
+                <h3>即時匯率換算</h3>
+                <div class="input-group">
+                    <input type="number" id="amount" placeholder="輸入金額">
+                    <select id="currencySelect">
+                        <option value="USD">美金 (USD)</option>
+                        <option value="JPY">日圓 (JPY)</option>
+                        <option value="KRW">韓元 (KRW)</option>
+                        <option value="EUR">歐元 (EUR)</option>
+                        <option value="GBP">英鎊 (GBP)</option>
+                        <option value="CNY">人民幣 (CNY)</option>
+                        <option value="VND">越南盾 (VND)</option>
+                        <option value="THB">泰幣 (THB)</option>
+                    </select>
+                </div>
+                <p class="result-text">➔ <span id="result">0</span> TWD</p>
+            </div>
+
+            <div class="ledger">
+                <h3>新增消費</h3>
+                <input type="text" id="note" placeholder="項目名稱">
+                <select id="categorySelect">
+                    <option value="餐飲">🍱 餐飲</option>
+                    <option value="交通">🚗 交通</option>
+                    <option value="購物">🛍️ 購物</option>
+                    <option value="住宿">🏨 住宿</option>
+                    <option value="其他">✨ 其他</option>
+                </select>
+                <input type="number" id="cost" placeholder="金額 (TWD)">
+                <button onclick="addLog()">確認新增</button>
+            </div>
+        </div>
+
+        <div id="page2" class="page" style="display:none;">
+            <div class="header"><h1>消費分析</h1></div>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="categorySummary" class="summary"></div>
+            <hr>
+            <h3>消費細目 (左滑或點擊刪除)</h3>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
